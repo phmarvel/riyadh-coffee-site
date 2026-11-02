@@ -77,7 +77,8 @@ p { margin-block: 0 var(--space-4); max-inline-size: var(--measure); }
 a { color: var(--henna-dark); text-underline-offset: 3px; }
 a:hover { color: var(--ink); }
 
-:focus-visible { outline: var(--ring) solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 6px var(--sand); border-radius: 2px; }
+/* NJD-7: no border-radius here, so focus keeps each control's own corners */
+:focus-visible { outline: var(--ring) solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 6px var(--sand); }
 
 .container { inline-size: min(100% - 2 * var(--space-4), var(--container)); margin-inline: auto; }
 .skip-link {
@@ -309,3 +310,12 @@ a:hover { color: var(--ink); }
 .footer-credits { grid-column: 1 / -1; padding-block-start: var(--space-5); border-block-start: 1px solid var(--sand); }
 .credits-list li { padding-block: var(--space-1); max-inline-size: var(--measure); }
 .footer-bottom { padding-block-start: var(--space-5); border-block-start: 1px solid var(--sand); }
+
+/* ===== section: review — NJD-7 المراجعة النهائية: الجوال وإمكانية الوصول وSEO ===== */
+/* Header wraps to two rows below 360px (about 113px tall): keep anchored headings clear of it. */
+@media (max-width: 359px) { html { scroll-padding-block-start: 128px; } }
+/* The last section already has its own bottom padding: no extra gap before the footer. */
+.site-footer { margin-block-start: 0; }
+/* Tighter hero on phones; on desktop the hero and the menu no longer stack 96px + 96px. */
+.hero { padding-block: var(--space-7) var(--space-6); }
+@media (min-width: 768px) { .hero { padding-block: var(--space-8) var(--space-7); } }
