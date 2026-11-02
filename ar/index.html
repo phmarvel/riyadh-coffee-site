@@ -9,6 +9,9 @@
   <link rel="alternate" hreflang="ar" href="index.html">
   <meta name="theme-color" content="#F4EAD8">
   <link rel="icon" href="../assets/img/dallah.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/noto-kufi-arabic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -36,95 +39,89 @@
   </header>
 
   <main id="main">
-    <div class="hero">
+    <div class="demo-note"><div class="container"><p>محتوى تجريبي: الأسماء والأسعار والآراء والأرقام نماذج حتى تُستبدل.</p></div></div>
+    <div class="hero" id="hero">
       <div class="container hero-inner">
-        <div>
+        <div class="hero-copy">
           <p class="eyebrow">قهوة مختصة · الرياض</p>
-          <h1>قهوة بروح نجد</h1>
-          <p class="lead">حبوب محمصة طازجة وهيل وتمر، تُقدَّم بكرم المجلس النجدي.</p>
-          <a class="btn" href="#order">اطلب مسبقًا للاستلام</a>
+          <h1>قهوة تُصبّ على الطريقة النجدية</h1>
+          <p class="lead">حبوب محمّصة طازجة وهيل وتمر، تُقدَّم بكرم المجلس النجدي.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#order">اطلب مسبقًا للاستلام</a>
+            <a class="btn btn-secondary" href="#menu">تصفّح القائمة</a>
+          </div>
         </div>
-        <img class="hero-art" src="../assets/img/dallah.svg" alt="رسم لدلة قهوة نجدية" width="240" height="240">
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&amp;fit=crop&amp;w=1200&amp;h=900&amp;q=70" srcset="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70 640w, https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&amp;fit=crop&amp;w=1200&amp;h=900&amp;q=70 1200w" sizes="(min-width: 1024px) 560px, 100vw" alt="فنجان قهوة أبيض بجانب كيس خيش تتناثر منه حبوب القهوة المحمّصة على طاولة خشبية" width="1200" height="900" fetchpriority="high">
+      </div>
+      <div class="stats">
+        <ul class="container stats-list">
+          <li><strong><bdi>2</bdi></strong><span>فرعان في الرياض</span></li>
+          <li><strong><bdi>3</bdi></strong><span>أنواع حبوب مختصة</span></li>
+          <li><strong>أسبوعيًا</strong><span>تحميص على دفعات صغيرة</span></li>
+          <li><strong><bdi>4.8</bdi></strong><span>تقييم الضيوف في المتوسط</span></li>
+        </ul>
       </div>
     </div>
 
     <!-- section:menu -->
     <section class="section" id="menu" aria-labelledby="menu-title">
       <div class="container">
-        <h2 id="menu-title">القائمة</h2>
-        <p class="section-lead">قهوة ساخنة وباردة ومشروبات تراثية وحلويات تُخبز كل صباح.</p>
+        <div class="section-head">
+          <h2 id="menu-title">القائمة</h2>
+          <p class="section-lead">قهوة وحلويات طازجة، من الدلّة إلى ماكينة الإسبريسو.</p>
+        </div>
         <div class="menu-category" role="group" aria-labelledby="menu-hot">
-          <h3 id="menu-hot">قهوة ساخنة</h3>
+          <h3 id="menu-hot">القهوة الساخنة</h3>
           <ul class="menu-grid">
-            <li class="menu-card">
-              <h4 class="menu-name">قهوة سعودية بالهيل</h4>
-              <p class="menu-desc">تحميص خفيف بنكهة الهيل، تُصبّ من الدلة.</p>
-              <p class="menu-price"><bdi>12</bdi> ر.س</p>
+            <li class="card menu-card">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1504630083234-14187a9df0f5?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="فنجان أبيض صغير من القهوة السوداء على صحن" width="640" height="480" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h4 class="menu-name">القهوة السعودية</h4>
+                <p class="menu-desc">تحميص فاتح بالهيل والزعفران.</p>
+                <p class="menu-price"><bdi>14</bdi> ريال</p>
+              </div>
             </li>
-            <li class="menu-card">
-              <h4 class="menu-name">قهوة خولانية</h4>
-              <p class="menu-desc">حبوب ناعمة بنكهة الفاكهة من مرتفعات خولان في اليمن.</p>
-              <p class="menu-price"><bdi>14</bdi> ر.س</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">فلات وايت</h4>
-              <p class="menu-desc">جرعتان من الإسبريسو مع حليب مبخّر ناعم.</p>
-              <p class="menu-price"><bdi>18</bdi> ر.س</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">قهوة تركية</h4>
-              <p class="menu-desc">مطحونة ناعمة ومغلية ببطء في إبريق صغير.</p>
-              <p class="menu-price"><bdi>14</bdi> ر.س</p>
+            <li class="card menu-card">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="فلات وايت برغوة حليب على شكل قلب في فنجان أبيض على صحن أزرق" width="640" height="480" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h4 class="menu-name">فلات وايت</h4>
+                <p class="menu-desc">إسبريسو مضاعف بحليب ناعم.</p>
+                <p class="menu-price"><bdi>18</bdi> ريال</p>
+              </div>
             </li>
           </ul>
         </div>
-        <div class="menu-category" role="group" aria-labelledby="menu-iced">
-          <h3 id="menu-iced">مثلجة</h3>
+        <div class="menu-category" role="group" aria-labelledby="menu-cold">
+          <h3 id="menu-cold">المشروبات الباردة</h3>
           <ul class="menu-grid">
-            <li class="menu-card">
-              <h4 class="menu-name">آيس لاتيه</h4>
-              <p class="menu-desc">إسبريسو بارد مع الحليب البارد والثلج.</p>
-              <p class="menu-price"><bdi>20</bdi> ر.س</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">كولد برو</h4>
-              <p class="menu-desc">منقوعة ست عشرة ساعة وتُقدَّم مع الثلج.</p>
-              <p class="menu-price"><bdi>19</bdi> ر.س</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">آيس سبانش لاتيه</h4>
-              <p class="menu-desc">إسبريسو وحليب وطبقة من الحليب المكثف المحلى.</p>
-              <p class="menu-price"><bdi>22</bdi> ر.س</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">قهوة مثلجة بالهيل</h4>
-              <p class="menu-desc">قهوتنا السعودية مبرّدة ومصبوبة على الثلج.</p>
-              <p class="menu-price"><bdi>18</bdi> ر.س</p>
+            <li class="card menu-card">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="لاتيه مثلّج بدوّامات من الحليب في كوب زجاجي طويل" width="640" height="480" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h4 class="menu-name">سبانش لاتيه مثلّج</h4>
+                <p class="menu-desc">إسبريسو وحليب مكثّف وثلج.</p>
+                <p class="menu-price"><bdi>21</bdi> ريال</p>
+              </div>
             </li>
           </ul>
         </div>
         <div class="menu-category" role="group" aria-labelledby="menu-sweets">
-          <h3 id="menu-sweets">حلويات</h3>
+          <h3 id="menu-sweets">الحلويات</h3>
           <ul class="menu-grid">
-            <li class="menu-card">
-              <h4 class="menu-name">كيكة التمر</h4>
-              <p class="menu-desc">كيكة تمر دافئة مع رشة صلصة الكراميل.</p>
-              <p class="menu-price"><bdi>16</bdi> ر.س</p>
+            <li class="card menu-card">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="قطعة كعكة بطبقات تعلوها الشوكولاتة" width="640" height="480" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h4 class="menu-name">كعكة التمر</h4>
+                <p class="menu-desc">كعكة تمر سكري دافئة بصلصة الكراميل.</p>
+                <p class="menu-price"><bdi>16</bdi> ريال</p>
+              </div>
             </li>
-            <li class="menu-card">
-              <h4 class="menu-name">كيكة الحليب بالزعفران</h4>
-              <p class="menu-desc">إسفنج طري منقوع بالحليب ومعطّر بالزعفران.</p>
-              <p class="menu-price"><bdi>18</bdi> ر.س</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">معمول</h4>
-              <p class="menu-desc">كعكة سميد بالزبدة محشوة بتمر السكري.</p>
-              <p class="menu-price"><bdi>12</bdi> ر.س</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">كوكيز الهيل</h4>
-              <p class="menu-desc">بسكويت هش بالهيل المطحون يُخبز كل صباح.</p>
-              <p class="menu-price"><bdi>10</bdi> ر.س</p>
+            <li class="card menu-card">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="كأس قهوة صغير على صحن مع ملعقة" width="640" height="480" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h4 class="menu-name">تمر وقهوة بالهيل</h4>
+                <p class="menu-desc">سبع تمرات خلاص مع دلّة قهوة.</p>
+                <p class="menu-price"><bdi>25</bdi> ريال</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -135,13 +132,15 @@
     <!-- section:story -->
     <section class="section" id="story" aria-labelledby="story-title">
       <div class="container">
-        <h2 id="story-title">قصتنا</h2>
-        <p class="section-lead">مقهى في الرياض نما من كرم الضيافة النجدية.</p>
+        <div class="section-head">
+          <h2 id="story-title">قصتنا</h2>
+          <p class="section-lead">من مجلس نجدي إلى فنجان في الرياض.</p>
+        </div>
         <div class="story-split">
-          <img class="story-art" src="../assets/img/story-dallah.svg" alt="دلة قهوة وفنجانان صغيران على صينية بأسلوب نجدي" width="240" height="240">
+          <div class="story-media"><img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&amp;fit=crop&amp;w=800&amp;h=1000&amp;q=70" alt="أسطوانة تحميص تخرج منها حبوب القهوة المحمّصة طازجة" width="800" height="1000" loading="lazy" decoding="async"></div>
           <div class="story-text">
-            <p>نجد كوفي مقهى في الرياض قام على كرم الضيافة النجدية، حيث يُصبّ فنجان القهوة العربية لكل ضيف يدخل.</p>
-            <p>نحمّص حبوبنا على دفعات صغيرة ليكون كل فنجان طازجًا، ونقدّمه كما نقدّمه في مجلسنا.</p>
+            <p>بدأت قهوة نجد عام <bdi>2019</bdi> بدلّة واحدة وفكرة واحدة: القهوة ترحيب قبل أن تكون مشروبًا. نحمّص كل أسبوع على دفعات صغيرة، ونطحنها مع الهيل كما كان يفعل أجدادنا، ونقدّمها مع التمر.</p>
+            <p>ويُصبّ لكل ضيف فنجانه الأول على حسابنا، فهكذا يبدأ المجلس النجدي.</p>
           </div>
         </div>
       </div>
@@ -151,49 +150,78 @@
     <!-- section:beans -->
     <section class="section" id="beans" aria-labelledby="beans-title">
       <div class="container">
-        <h2 id="beans-title">حبوبنا</h2>
-        <p class="section-lead">حبوب نختارها من مصدرها ونحمصها على دفعات صغيرة لنحافظ على نكهتها.</p>
+        <div class="section-head">
+          <h2 id="beans-title">حبوبنا</h2>
+          <p class="section-lead">ثلاثة أنواع من الحبوب المختصة، نختارها من مصدرها ونحمّصها كل أسبوع.</p>
+        </div>
         <ul class="bean-grid">
-          <li class="bean-card">
-            <img class="bean-icon" src="../assets/img/bean-ethiopia.svg" alt="حبة بن للتحميص الفاتح الإثيوبي" width="96" height="96">
-            <h3>إثيوبيا يرغاشيفي</h3>
-            <dl>
-              <dt>الأصل</dt><dd>يرغاشيفي، إثيوبيا</dd>
-              <dt>التحميص</dt><dd>فاتح</dd>
-              <dt>نكهات التذوق</dt><dd>ياسمين وحمضيات وعسل</dd>
-            </dl>
+          <li class="card bean-card">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="حبوب قهوة محمّصة داكنة في كيس خيش" width="640" height="480" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="bean-roast"><span class="badge">التحميص: متوسط</span></p>
+              <h3>موكا اليمن</h3>
+              <dl>
+                <dt>الأصل</dt><dd>اليمن</dd>
+                <dt>النكهات</dt><dd>شوكولاتة داكنة وفاكهة مجففة</dd>
+              </dl>
+            </div>
           </li>
-          <li class="bean-card">
-            <img class="bean-icon" src="../assets/img/bean-colombia.svg" alt="حبة بن للتحميص المتوسط الكولومبي" width="96" height="96">
-            <h3>كولومبيا هويلا</h3>
-            <dl>
-              <dt>الأصل</dt><dd>هويلا، كولومبيا</dd>
-              <dt>التحميص</dt><dd>متوسط</dd>
-              <dt>نكهات التذوق</dt><dd>كراميل وتمر ولوز</dd>
-            </dl>
+          <li class="card bean-card">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="حبوب قهوة محمّصة فاتحة في وعاء أبيض" width="640" height="480" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="bean-roast"><span class="badge">التحميص: فاتح</span></p>
+              <h3>يرغاتشيف إثيوبيا</h3>
+              <dl>
+                <dt>الأصل</dt><dd>إثيوبيا</dd>
+                <dt>النكهات</dt><dd>ياسمين وحمضيات</dd>
+              </dl>
+            </div>
           </li>
-          <li class="bean-card">
-            <img class="bean-icon" src="../assets/img/bean-yemen.svg" alt="حبة بن للتحميص الداكن اليمني" width="96" height="96">
-            <h3>اليمن حراز</h3>
-            <dl>
-              <dt>الأصل</dt><dd>حراز، اليمن</dd>
-              <dt>التحميص</dt><dd>داكن</dd>
-              <dt>نكهات التذوق</dt><dd>هيل وتمر وتوابل</dd>
-            </dl>
+          <li class="card bean-card">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="حبوب قهوة محمّصة متوسطة تملأ الصورة" width="640" height="480" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="bean-roast"><span class="badge">التحميص: متوسط</span></p>
+              <h3>هويلا كولومبيا</h3>
+              <dl>
+                <dt>الأصل</dt><dd>كولومبيا</dd>
+                <dt>النكهات</dt><dd>كراميل وبندق</dd>
+              </dl>
+            </div>
           </li>
         </ul>
       </div>
     </section>
     <!-- /section:beans -->
 
+    <!-- section:gallery -->
+    <section class="section" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="gallery-title">المعرض</h2>
+          <p class="section-lead">لمحة من فناجيننا وطاولاتنا ومحمصتنا.</p>
+        </div>
+        <ul class="gallery-grid">
+          <li><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="طاولة تقديم في مقهى مضيء بمصابيح معلّقة ولوحة قائمة" width="640" height="640" loading="lazy" decoding="async"></li>
+          <li><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="قهوة مقطّرة تُحضَّر بالتقطير اليدوي في إبريق زجاجي" width="640" height="640" loading="lazy" decoding="async"></li>
+          <li><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="دائرة من فناجين القهوة على طاولة خشبية من الأعلى" width="640" height="640" loading="lazy" decoding="async"></li>
+          <li><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="حامل الإسبريسو مملوءًا بالقهوة المطحونة بجانب حبوب كاملة" width="640" height="640" loading="lazy" decoding="async"></li>
+          <li><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="فنجان قهوة سوداء برغوة كريمية من الأعلى" width="640" height="640" loading="lazy" decoding="async"></li>
+          <li><img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="كابتشينو برغوة على شكل قلب فوق حبوب القهوة" width="640" height="640" loading="lazy" decoding="async"></li>
+        </ul>
+      </div>
+    </section>
+    <!-- /section:gallery -->
+
     <!-- section:branches -->
     <section class="section" id="branches" aria-labelledby="branches-title">
       <div class="container">
-        <h2 id="branches-title">الفرعان</h2>
-        <p class="section-lead">فرعان في الرياض، مع ساعات العمل والخريطة.</p>
+        <div class="section-head">
+          <h2 id="branches-title">الفروع</h2>
+          <p class="section-lead">فرعان في الرياض، مع العنوان وساعات العمل والاتجاهات.</p>
+        </div>
         <!--
           BRANCH DATA — edit here (keep index.html and ar/index.html identical in numbers).
-          Template: name | district | hours Sat–Thu | hours Fri | lat | lon | bbox (west,south,east,north)
+          Template: name | address (shown in the card) | hours Sat–Thu | hours Fri | lat | lon | bbox (west,south,east,north)
           Directions link: https://www.google.com/maps/dir/?api=1&destination=LAT,LON
           Map embed:       https://www.openstreetmap.org/export/embed.html?bbox=BBOX&layer=mapnik&marker=LAT,LON
           olaya | Al Olaya Branch / فرع العليا | Al Olaya / العليا | 07:00–00:00 | 13:00–00:00 | 24.6988 | 46.6847 | 46.6807,24.6948,46.6887,24.7028
@@ -202,7 +230,7 @@
         <div class="branches-grid">
           <article class="branch-card" data-branch="olaya">
             <h3>فرع العليا</h3>
-            <p class="branch-district">العليا</p>
+            <p class="branch-district">شارع العليا، حي العليا، الرياض</p>
             <dl class="branch-hours">
               <dt>السبت – الخميس</dt><dd><bdi>07:00–00:00</bdi></dd>
               <dt>الجمعة</dt><dd><bdi>13:00–00:00</bdi></dd>
@@ -212,7 +240,7 @@
           </article>
           <article class="branch-card" data-branch="malqa">
             <h3>فرع الملقا</h3>
-            <p class="branch-district">الملقا</p>
+            <p class="branch-district">طريق أنس بن مالك، حي الملقا، الرياض</p>
             <dl class="branch-hours">
               <dt>السبت – الخميس</dt><dd><bdi>06:30–23:00</bdi></dd>
               <dt>الجمعة</dt><dd><bdi>13:00–23:00</bdi></dd>
@@ -224,6 +252,7 @@
       </div>
     </section>
     <!-- /section:branches -->
+
 
     <!-- section:order -->
     <section class="section" id="order" aria-labelledby="order-title">
@@ -261,13 +290,74 @@
             <button class="btn" id="order-submit" type="submit">أرسل الطلب عبر واتساب</button>
             <p class="order-note">سيُفتح واتساب برسالة جاهزة، وتؤكد طلبك من هناك.</p>
             <p class="order-status" id="order-status" role="status" hidden>فُتح واتساب. أرسل الرسالة هناك لتأكيد طلبك.</p>
-            <p class="order-fallback"><a id="order-fallback" target="_blank" rel="noopener" hidden>لم يفتح واتساب؟ افتح المحادثة من هنا.</a></p>
+            <p class="order-fallback"><a id="order-fallback" href="#order" target="_blank" rel="noopener" hidden>لم يفتح واتساب؟ افتح المحادثة من هنا.</a></p>
           </div>
         </form>
         <noscript><p class="order-noscript">يحتاج الطلب المسبق إلى جافاسكربت. فعّله في المتصفح ثم أعد تحميل الصفحة.</p></noscript>
       </div>
     </section>
     <!-- /section:order -->
+
+    <!-- section:reviews -->
+    <section class="section" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="reviews-title">آراء العملاء</h2>
+          <p class="section-lead">ماذا يقول ضيوفنا عن قهوتهم.</p>
+        </div>
+        <ul class="review-grid">
+          <li><figure class="card review-card"><blockquote><p>القهوة السعودية تذكّرني بمجلس جدي.</p></blockquote><figcaption>فيصل، العليا</figcaption></figure></li>
+          <li><figure class="card review-card"><blockquote><p>أفضل فلات وايت في الملقا، وكان الطلب جاهزًا خلال <bdi>5</bdi> دقائق.</p></blockquote><figcaption>نورة، الملقا</figcaption></figure></li>
+          <li><figure class="card review-card"><blockquote><p>حبوب اليمن تستحق المشوار. أطلب كيسًا كل شهر.</p></blockquote><figcaption>عبدالعزيز، الرياض</figcaption></figure></li>
+        </ul>
+      </div>
+    </section>
+    <!-- /section:reviews -->
+
+    <!-- section:faq -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="faq-title">الأسئلة الشائعة</h2>
+          <p class="section-lead">إجابات سريعة قبل زيارتك أو طلبك.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" name="faq" open>
+            <summary>هل أستطيع الطلب المسبق للاستلام؟</summary>
+            <p>نعم. اختر الفرع في النموذج أعلاه ونكمل عبر واتساب.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>كم يستغرق تجهيز الطلب؟</summary>
+            <p>عادةً <bdi>10</bdi> دقائق.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>هل تبيعون الحبوب كاملة؟</summary>
+            <p>نعم، بأكياس <bdi>250</bdi> غرامًا و<bdi>1</bdi> كيلوغرام، وتُطحن عند الطلب.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>هل يتوفر موقف؟</summary>
+            <p>في الفرعين مواقف مجانية.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>هل تقدّمون التوصيل؟</summary>
+            <p>ليس بعد. الاستلام من الفرع فقط.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+    <!-- /section:faq -->
+
+    <!-- section:cta -->
+    <section class="section section--plain cta-band" id="cta" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <div>
+          <h2 id="cta-title">قهوتك جاهزة عند وصولك.</h2>
+          <p class="section-lead">اختر فرعك وطلبك، ثم استلمه دون انتظار.</p>
+        </div>
+        <a class="btn btn-light" href="#order">اطلب مسبقًا الآن</a>
+      </div>
+    </section>
+    <!-- /section:cta -->
   </main>
 
   <footer class="site-footer">
@@ -275,6 +365,7 @@
       <div class="footer-col">
         <a class="brand" href="index.html"><img src="../assets/img/dallah.svg" alt="" width="32" height="32"><span>نجد كوفي</span></a>
         <p class="footer-about">قهوة مختصة بروح نجدية في الرياض.</p>
+        <p class="footer-demo">محتوى تجريبي: الأسماء والأسعار والآراء والأرقام نماذج حتى تُستبدل.</p>
       </div>
       <nav class="footer-col" aria-labelledby="footer-links-title">
         <h2 class="footer-title" id="footer-links-title">روابط</h2>
@@ -294,8 +385,8 @@
         <h2 class="footer-title">تواصل</h2>
         <ul class="footer-contact">
           <li><a href="#order">اطلب عبر واتساب</a></li>
-          <li>فرع العليا: العليا</li>
-          <li>فرع الملقا: الملقا</li>
+          <li>فرع العليا: شارع العليا، حي العليا</li>
+          <li>فرع الملقا: طريق أنس بن مالك، حي الملقا</li>
         </ul>
       </div>
       <div class="footer-col">
@@ -313,9 +404,26 @@
       </div>
       <section class="footer-credits" aria-labelledby="footer-credits-title">
         <h2 class="footer-title" id="footer-credits-title">حقوق الصور</h2>
+        <p class="credits-note">كل الصور مرخّصة للاستخدام المجاني بموجب رخصة <bdi>Unsplash</bdi>.</p>
         <ul class="credits-list">
-          <li>الرسوم التوضيحية (الدلّة ومشهد القصة وحبوب القهوة ونقش السدو): أعمال أصلية لنجد كوفي.</li>
-          <li>خرائط الفروع: © مساهمو OpenStreetMap.</li>
+          <li>الرسوم التوضيحية (الدلّة وحبوب القهوة ونقش السدو): أعمال أصلية لنجد كوفي.</li>
+          <li>خرائط الفروع: © مساهمو <bdi>OpenStreetMap</bdi>.</li>
+          <li>صورة الواجهة (فنجان القهوة والحبوب المحمّصة): مساهم في <a href="https://images.unsplash.com/photo-1459755486867-b55449bb39ff"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة القائمة (القهوة السوداء): مساهم في <a href="https://images.unsplash.com/photo-1504630083234-14187a9df0f5"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة القائمة (الفلات وايت): مساهم في <a href="https://images.unsplash.com/photo-1485808191679-5f86510681a2"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة القائمة (اللاتيه المثلّج): مساهم في <a href="https://images.unsplash.com/photo-1517701604599-bb29b565090c"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة القائمة (قطعة الكعكة): مساهم في <a href="https://images.unsplash.com/photo-1571115177098-24ec42ed204d"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة القائمة (كأس القهوة الصغير): مساهم في <a href="https://images.unsplash.com/photo-1610889556528-9a770e32642f"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة القصة (أسطوانة التحميص): مساهم في <a href="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة الحبوب (تحميص داكن في كيس): مساهم في <a href="https://images.unsplash.com/photo-1524350876685-274059332603"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة الحبوب (تحميص فاتح في وعاء): مساهم في <a href="https://images.unsplash.com/photo-1587734195503-904fca47e0e9"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة الحبوب (تحميص متوسط): مساهم في <a href="https://images.unsplash.com/photo-1447933601403-0c6688de566e"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة المعرض (طاولة التقديم): مساهم في <a href="https://images.unsplash.com/photo-1453614512568-c4024d13c247"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة المعرض (التقطير اليدوي): مساهم في <a href="https://images.unsplash.com/photo-1442512595331-e89e73853f31"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة المعرض (الفناجين من الأعلى): مساهم في <a href="https://images.unsplash.com/photo-1498804103079-a6351b050096"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة المعرض (حامل الإسبريسو والحبوب): مساهم في <a href="https://images.unsplash.com/photo-1511920170033-f8396924c348"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة المعرض (فنجان برغوة كريمية): مساهم في <a href="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd"><bdi>Unsplash</bdi></a>.</li>
+          <li>صورة المعرض (كابتشينو فوق الحبوب): مساهم في <a href="https://images.unsplash.com/photo-1512568400610-62da28bc8a13"><bdi>Unsplash</bdi></a>.</li>
         </ul>
       </section>
     </div>
