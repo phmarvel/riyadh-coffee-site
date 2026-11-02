@@ -74,6 +74,36 @@
       <div class="container">
         <h2 id="branches-title">Branches</h2>
         <p class="section-lead">Two branches in Riyadh, with opening hours and directions.</p>
+        <!--
+          BRANCH DATA — edit here (keep index.html and ar/index.html identical in numbers).
+          Template: name | district | hours Sat–Thu | hours Fri | lat | lon | bbox (west,south,east,north)
+          Directions link: https://www.google.com/maps/dir/?api=1&destination=LAT,LON
+          Map embed:       https://www.openstreetmap.org/export/embed.html?bbox=BBOX&layer=mapnik&marker=LAT,LON
+          olaya | Al Olaya Branch / فرع العليا | Al Olaya / العليا | 07:00–00:00 | 13:00–00:00 | 24.6988 | 46.6847 | 46.6807,24.6948,46.6887,24.7028
+          malqa | Al Malqa Branch / فرع الملقا | Al Malqa / الملقا | 06:30–23:00 | 13:00–23:00 | 24.8100 | 46.6000 | 46.5960,24.8060,46.6040,24.8140
+        -->
+        <div class="branches-grid">
+          <article class="branch-card" data-branch="olaya">
+            <h3>Al Olaya Branch</h3>
+            <p class="branch-district">Al Olaya</p>
+            <dl class="branch-hours">
+              <dt>Sat–Thu</dt><dd><bdi>07:00–00:00</bdi></dd>
+              <dt>Fri</dt><dd><bdi>13:00–00:00</bdi></dd>
+            </dl>
+            <a class="btn branch-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=24.6988,46.6847" target="_blank" rel="noopener" aria-label="Directions to Al Olaya Branch">Get directions</a>
+            <iframe class="branch-map" src="https://www.openstreetmap.org/export/embed.html?bbox=46.6807%2C24.6948%2C46.6887%2C24.7028&amp;layer=mapnik&amp;marker=24.6988%2C46.6847" title="Map of Al Olaya Branch" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </article>
+          <article class="branch-card" data-branch="malqa">
+            <h3>Al Malqa Branch</h3>
+            <p class="branch-district">Al Malqa</p>
+            <dl class="branch-hours">
+              <dt>Sat–Thu</dt><dd><bdi>06:30–23:00</bdi></dd>
+              <dt>Fri</dt><dd><bdi>13:00–23:00</bdi></dd>
+            </dl>
+            <a class="btn branch-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=24.8100,46.6000" target="_blank" rel="noopener" aria-label="Directions to Al Malqa Branch">Get directions</a>
+            <iframe class="branch-map" src="https://www.openstreetmap.org/export/embed.html?bbox=46.5960%2C24.8060%2C46.6040%2C24.8140&amp;layer=mapnik&amp;marker=24.8100%2C46.6000" title="Map of Al Malqa Branch" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </article>
+        </div>
       </div>
     </section>
     <!-- /section:branches -->
