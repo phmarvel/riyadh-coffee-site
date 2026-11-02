@@ -224,6 +224,41 @@
       <div class="container">
         <h2 id="order-title">Pre-order for pickup</h2>
         <p class="section-lead">Order ahead on WhatsApp and collect your coffee without waiting.</p>
+        <form id="order-form" class="order-form" novalidate>
+          <div class="field">
+            <label for="order-branch">Branch</label>
+            <select id="order-branch" name="branch" required>
+              <option value="">Choose a branch</option>
+              <option value="najd-olaya">Olaya branch</option>
+              <option value="najd-malqa">Malqa branch</option>
+            </select>
+            <p class="field-error" id="order-branch-error" hidden>Choose the branch you will collect from.</p>
+            <p class="field-error" id="order-branch-unavailable" hidden>This branch is not taking orders right now. Choose another branch.</p>
+          </div>
+          <div class="field">
+            <label for="order-name">Name</label>
+            <input id="order-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+            <p class="field-error" id="order-name-error" hidden>Enter your name.</p>
+          </div>
+          <div class="field field-wide">
+            <label for="order-items">Your order</label>
+            <textarea id="order-items" name="items" rows="4" placeholder="e.g. a large Saudi coffee and a kleicha" required></textarea>
+            <p class="field-error" id="order-items-error" hidden>Write what you would like to order.</p>
+          </div>
+          <div class="field">
+            <label for="order-time">Pickup time</label>
+            <input id="order-time" name="time" type="time" aria-describedby="order-time-hint" required>
+            <p class="field-hint" id="order-time-hint">Choose when you will stop by to collect your order.</p>
+            <p class="field-error" id="order-time-error" hidden>Choose a pickup time.</p>
+          </div>
+          <div class="order-actions">
+            <button class="btn" id="order-submit" type="submit">Send order on WhatsApp</button>
+            <p class="order-note">WhatsApp will open with your message ready, and you confirm your order there.</p>
+            <p class="order-status" id="order-status" role="status" hidden>WhatsApp is open. Send the message there to confirm your order.</p>
+            <p class="order-fallback"><a id="order-fallback" target="_blank" rel="noopener" hidden>WhatsApp did not open? Open the chat here.</a></p>
+          </div>
+        </form>
+        <noscript><p class="order-noscript">Pre-ordering needs JavaScript. Turn it on in your browser, then reload this page.</p></noscript>
       </div>
     </section>
     <!-- /section:order -->
@@ -236,5 +271,7 @@
     </div>
   </footer>
   <script src="assets/js/nav.js"></script>
+  <script defer src="assets/js/config.js"></script>
+  <script defer src="assets/js/order.js"></script>
 </body>
 </html>
