@@ -24,4 +24,9 @@
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.site-header')) set(false);
   });
+  // Same breakpoint as the desktop navbar in style.css (min-width: 1024px).
+  var wide = window.matchMedia('(min-width: 1024px)');
+  wide.addEventListener('change', function (e) {
+    if (e.matches) set(false);
+  });
 })();
