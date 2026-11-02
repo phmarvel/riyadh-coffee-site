@@ -144,4 +144,45 @@ a:hover { color: var(--ink); }
 
 /* ===== section: branches ===== */
 
-/* ===== section: order ===== */
+/* ===== section: order — NJD-6 الطلب المسبق للاستلام عبر واتساب ===== */
+#order [hidden] { display: none; }
+.order-form {
+  display: grid; gap: var(--space-5); max-inline-size: 760px; margin-block-start: var(--space-6);
+  padding: var(--space-5); background: var(--white); border: 1px solid var(--clay); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.order-form .field { display: flex; flex-direction: column; gap: var(--space-2); min-inline-size: 0; }
+.order-form label { font-weight: 700; color: var(--ink); }
+.order-form select, .order-form input, .order-form textarea {
+  inline-size: 100%; min-block-size: 44px; padding-block: var(--space-2); padding-inline: var(--space-3);
+  border: 2px solid var(--clay); border-radius: var(--radius); background: var(--white); color: var(--ink);
+  font: inherit; font-size: 1rem; line-height: 1.5;
+}
+.order-form textarea { min-block-size: 112px; resize: vertical; }
+.order-form ::placeholder { color: var(--clay); opacity: 1; }
+.order-form select:hover, .order-form input:hover, .order-form textarea:hover { border-color: var(--ink); }
+.order-form select:focus-visible, .order-form input:focus-visible, .order-form textarea:focus-visible { border-color: var(--ink); }
+.order-form [aria-invalid="true"] { border-color: var(--henna); border-width: 3px; }
+.order-form :disabled { opacity: .55; cursor: not-allowed; }
+.field-hint { margin: 0; font-size: .9375rem; color: var(--clay); }
+.field-error, .order-status {
+  display: flex; align-items: flex-start; gap: var(--space-2); margin: 0; font-weight: 700; color: var(--ink);
+}
+.field-error::before, .order-status::before {
+  content: ""; flex: none; inline-size: 20px; block-size: 20px; margin-block-start: var(--space-1);
+  -webkit-mask: var(--order-icon) center / contain no-repeat; mask: var(--order-icon) center / contain no-repeat;
+}
+.field-error { --order-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E"); }
+.field-error::before { background-color: var(--henna); }
+.order-status { --order-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 100 20 10 10 0 000-20zm-2 15l-5-5 1.4-1.4 3.6 3.6 7.6-7.6L19 8l-9 9z'/%3E%3C/svg%3E"); }
+.order-status::before { background-color: var(--olive); }
+.order-actions { display: grid; gap: var(--space-3); justify-items: start; }
+.order-actions .btn { min-inline-size: 220px; }
+.order-actions .btn:disabled { pointer-events: none; }
+.order-note, .order-fallback, .order-noscript { margin: 0; }
+.order-note { color: var(--clay); }
+.order-fallback a { display: inline-flex; align-items: center; min-block-size: 44px; font-weight: 700; }
+.order-noscript { margin-block-start: var(--space-4); font-weight: 700; }
+@media (min-width: 720px) {
+  .order-form { grid-template-columns: 1fr 1fr; padding: var(--space-6); }
+  .order-form .field-wide, .order-form .order-actions { grid-column: 1 / -1; }
+}

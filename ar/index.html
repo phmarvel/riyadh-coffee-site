@@ -83,6 +83,41 @@
       <div class="container">
         <h2 id="order-title">الطلب المسبق للاستلام</h2>
         <p class="section-lead">اطلب عبر واتساب واستلم قهوتك دون انتظار.</p>
+        <form id="order-form" class="order-form" novalidate>
+          <div class="field">
+            <label for="order-branch">الفرع</label>
+            <select id="order-branch" name="branch" required>
+              <option value="">اختر الفرع</option>
+              <option value="najd-olaya">فرع العليا</option>
+              <option value="najd-malqa">فرع الملقا</option>
+            </select>
+            <p class="field-error" id="order-branch-error" hidden>اختر الفرع الذي ستستلم منه.</p>
+            <p class="field-error" id="order-branch-unavailable" hidden>هذا الفرع لا يستقبل الطلبات حاليًا. اختر فرعًا آخر.</p>
+          </div>
+          <div class="field">
+            <label for="order-name">الاسم</label>
+            <input id="order-name" name="name" type="text" autocomplete="name" placeholder="اسمك الكريم" required>
+            <p class="field-error" id="order-name-error" hidden>اكتب اسمك.</p>
+          </div>
+          <div class="field field-wide">
+            <label for="order-items">الطلب</label>
+            <textarea id="order-items" name="items" rows="4" placeholder="مثال: قهوة سعودية كبيرة وكليجا" required></textarea>
+            <p class="field-error" id="order-items-error" hidden>اكتب ما تريد طلبه.</p>
+          </div>
+          <div class="field">
+            <label for="order-time">وقت الاستلام</label>
+            <input id="order-time" name="time" type="time" aria-describedby="order-time-hint" required>
+            <p class="field-hint" id="order-time-hint">اختر الوقت الذي ستمرّ فيه لاستلام طلبك.</p>
+            <p class="field-error" id="order-time-error" hidden>اختر وقت الاستلام.</p>
+          </div>
+          <div class="order-actions">
+            <button class="btn" id="order-submit" type="submit">أرسل الطلب عبر واتساب</button>
+            <p class="order-note">سيُفتح واتساب برسالة جاهزة، وتؤكد طلبك من هناك.</p>
+            <p class="order-status" id="order-status" role="status" hidden>فُتح واتساب. أرسل الرسالة هناك لتأكيد طلبك.</p>
+            <p class="order-fallback"><a id="order-fallback" target="_blank" rel="noopener" hidden>لم يفتح واتساب؟ افتح المحادثة من هنا.</a></p>
+          </div>
+        </form>
+        <noscript><p class="order-noscript">يحتاج الطلب المسبق إلى جافاسكربت. فعّله في المتصفح ثم أعد تحميل الصفحة.</p></noscript>
       </div>
     </section>
     <!-- /section:order -->
@@ -95,5 +130,7 @@
     </div>
   </footer>
   <script src="../assets/js/nav.js"></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/order.js"></script>
 </body>
 </html>
