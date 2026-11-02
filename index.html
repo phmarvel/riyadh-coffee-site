@@ -9,6 +9,9 @@
   <link rel="alternate" hreflang="en" href="index.html">
   <meta name="theme-color" content="#F4EAD8">
   <link rel="icon" href="assets/img/dallah.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -36,95 +39,89 @@
   </header>
 
   <main id="main">
-    <div class="hero">
+    <div class="demo-note"><div class="container"><p>Demo content: names, prices, reviews and phone numbers are samples until replaced.</p></div></div>
+    <div class="hero" id="hero">
       <div class="container hero-inner">
-        <div>
+        <div class="hero-copy">
           <p class="eyebrow">Specialty coffee · Riyadh</p>
           <h1>Coffee poured the Najdi way</h1>
           <p class="lead">Freshly roasted beans, cardamom and dates, served with the generosity of a Najdi majlis.</p>
-          <a class="btn" href="#order">Pre-order for pickup</a>
+          <div class="hero-actions">
+            <a class="btn" href="#order">Pre-order for pickup</a>
+            <a class="btn btn-secondary" href="#menu">See the menu</a>
+          </div>
         </div>
-        <img class="hero-art" src="assets/img/dallah.svg" alt="Illustration of a Najdi coffee pot" width="240" height="240">
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&amp;fit=crop&amp;w=1200&amp;h=900&amp;q=70" srcset="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70 640w, https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&amp;fit=crop&amp;w=1200&amp;h=900&amp;q=70 1200w" sizes="(min-width: 1024px) 560px, 100vw" alt="A white cup of coffee beside a burlap sack of roasted beans spilling across a wooden table" width="1200" height="900" fetchpriority="high">
+      </div>
+      <div class="stats">
+        <ul class="container stats-list">
+          <li><strong>2</strong><span>Branches in Riyadh</span></li>
+          <li><strong>3</strong><span>Single-origin roasts</span></li>
+          <li><strong>Weekly</strong><span>Roasted in small batches</span></li>
+          <li><strong>4.8</strong><span>Average guest rating</span></li>
+        </ul>
       </div>
     </div>
 
     <!-- section:menu -->
     <section class="section" id="menu" aria-labelledby="menu-title">
       <div class="container">
-        <h2 id="menu-title">Menu</h2>
-        <p class="section-lead">Hot and cold coffee, traditional drinks and sweets baked every morning.</p>
+        <div class="section-head">
+          <h2 id="menu-title">Menu</h2>
+          <p class="section-lead">Coffee and sweets made fresh, from the dallah to the espresso bar.</p>
+        </div>
         <div class="menu-category" role="group" aria-labelledby="menu-hot">
           <h3 id="menu-hot">Hot coffee</h3>
           <ul class="menu-grid">
-            <li class="menu-card">
-              <h4 class="menu-name">Saudi coffee with cardamom</h4>
-              <p class="menu-desc">Lightly roasted, spiced with cardamom and poured from the dallah.</p>
-              <p class="menu-price"><bdi>12</bdi> SAR</p>
+            <li class="card menu-card">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1504630083234-14187a9df0f5?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="A small white cup of black coffee on a saucer" width="640" height="480" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h4 class="menu-name">Saudi Coffee</h4>
+                <p class="menu-desc">Light roast with cardamom and saffron.</p>
+                <p class="menu-price">14 SAR</p>
+              </div>
             </li>
-            <li class="menu-card">
-              <h4 class="menu-name">Khawlani coffee</h4>
-              <p class="menu-desc">Smooth, fruity beans from the Khawlan highlands of Yemen.</p>
-              <p class="menu-price"><bdi>14</bdi> SAR</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">Flat white</h4>
-              <p class="menu-desc">Double espresso with silky steamed milk.</p>
-              <p class="menu-price"><bdi>18</bdi> SAR</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">Turkish coffee</h4>
-              <p class="menu-desc">Finely ground and slowly simmered in a small pot.</p>
-              <p class="menu-price"><bdi>14</bdi> SAR</p>
+            <li class="card menu-card">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="A flat white with a heart in the milk foam, in a white cup on a blue saucer" width="640" height="480" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h4 class="menu-name">Flat White</h4>
+                <p class="menu-desc">Double ristretto with silky milk.</p>
+                <p class="menu-price">18 SAR</p>
+              </div>
             </li>
           </ul>
         </div>
-        <div class="menu-category" role="group" aria-labelledby="menu-iced">
-          <h3 id="menu-iced">Iced</h3>
+        <div class="menu-category" role="group" aria-labelledby="menu-cold">
+          <h3 id="menu-cold">Cold drinks</h3>
           <ul class="menu-grid">
-            <li class="menu-card">
-              <h4 class="menu-name">Iced latte</h4>
-              <p class="menu-desc">Chilled espresso over cold milk and ice.</p>
-              <p class="menu-price"><bdi>20</bdi> SAR</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">Cold brew</h4>
-              <p class="menu-desc">Steeped for sixteen hours and served over ice.</p>
-              <p class="menu-price"><bdi>19</bdi> SAR</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">Iced spanish latte</h4>
-              <p class="menu-desc">Espresso, milk and a layer of sweet condensed milk.</p>
-              <p class="menu-price"><bdi>22</bdi> SAR</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">Iced cardamom coffee</h4>
-              <p class="menu-desc">Our Saudi coffee, chilled and poured over ice.</p>
-              <p class="menu-price"><bdi>18</bdi> SAR</p>
+            <li class="card menu-card">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="An iced latte with swirls of milk in a tall glass" width="640" height="480" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h4 class="menu-name">Iced Spanish Latte</h4>
+                <p class="menu-desc">Espresso, condensed milk and ice.</p>
+                <p class="menu-price">21 SAR</p>
+              </div>
             </li>
           </ul>
         </div>
         <div class="menu-category" role="group" aria-labelledby="menu-sweets">
-          <h3 id="menu-sweets">Desserts</h3>
+          <h3 id="menu-sweets">Sweets</h3>
           <ul class="menu-grid">
-            <li class="menu-card">
-              <h4 class="menu-name">Date cake</h4>
-              <p class="menu-desc">Warm sticky date cake with a drizzle of toffee sauce.</p>
-              <p class="menu-price"><bdi>16</bdi> SAR</p>
+            <li class="card menu-card">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="A slice of layered cake topped with chocolate" width="640" height="480" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h4 class="menu-name">Date Cake</h4>
+                <p class="menu-desc">Warm Sukkari date cake with toffee.</p>
+                <p class="menu-price">16 SAR</p>
+              </div>
             </li>
-            <li class="menu-card">
-              <h4 class="menu-name">Saffron milk cake</h4>
-              <p class="menu-desc">Soft sponge soaked in milk and scented with saffron.</p>
-              <p class="menu-price"><bdi>18</bdi> SAR</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">Maamoul</h4>
-              <p class="menu-desc">Buttery semolina cookie filled with Sukkari dates.</p>
-              <p class="menu-price"><bdi>12</bdi> SAR</p>
-            </li>
-            <li class="menu-card">
-              <h4 class="menu-name">Cardamom cookie</h4>
-              <p class="menu-desc">Crisp shortbread with ground cardamom, baked each morning.</p>
-              <p class="menu-price"><bdi>10</bdi> SAR</p>
+            <li class="card menu-card">
+              <div class="card-media"><img src="https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="A small glass of coffee on a saucer with a teaspoon" width="640" height="480" loading="lazy" decoding="async"></div>
+              <div class="card-body">
+                <h4 class="menu-name">Dates &amp; Cardamom Coffee</h4>
+                <p class="menu-desc">Seven Khalas dates and a dallah of coffee.</p>
+                <p class="menu-price">25 SAR</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -135,13 +132,15 @@
     <!-- section:story -->
     <section class="section" id="story" aria-labelledby="story-title">
       <div class="container">
-        <h2 id="story-title">Our story</h2>
-        <p class="section-lead">A Riyadh coffee house that grew out of Najdi hospitality.</p>
+        <div class="section-head">
+          <h2 id="story-title">Our story</h2>
+          <p class="section-lead">From a Najdi majlis to a cup in Riyadh.</p>
+        </div>
         <div class="story-split">
-          <img class="story-art" src="assets/img/story-dallah.svg" alt="A coffee pot and two small cups on a tray, drawn in Najdi style" width="240" height="240">
+          <div class="story-media"><img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&amp;fit=crop&amp;w=800&amp;h=1000&amp;q=70" alt="A coffee roasting drum with freshly roasted beans pouring out" width="800" height="1000" loading="lazy" decoding="async"></div>
           <div class="story-text">
-            <p>Najd Coffee is a Riyadh coffee house built on Najdi hospitality, where a pot of Arabic coffee is poured for every guest who walks in.</p>
-            <p>We roast our beans in small batches so each cup tastes fresh, and we serve it the way we would in our own majlis.</p>
+            <p>Najd Coffee began in 2019 with one dallah and one idea: coffee is a welcome before it is a drink. We roast every week in small batches, grind with cardamom the way our grandparents did, and serve it with dates.</p>
+            <p>Every guest is poured a first cup on the house, because that is how a Najdi majlis begins.</p>
           </div>
         </div>
       </div>
@@ -151,49 +150,78 @@
     <!-- section:beans -->
     <section class="section" id="beans" aria-labelledby="beans-title">
       <div class="container">
-        <h2 id="beans-title">Our beans</h2>
-        <p class="section-lead">Beans chosen at origin and roasted in small batches for flavour.</p>
+        <div class="section-head">
+          <h2 id="beans-title">Our beans</h2>
+          <p class="section-lead">Three single-origin roasts, picked at origin and roasted every week.</p>
+        </div>
         <ul class="bean-grid">
-          <li class="bean-card">
-            <img class="bean-icon" src="assets/img/bean-ethiopia.svg" alt="Coffee bean for the light Ethiopian roast" width="96" height="96">
-            <h3>Ethiopia Yirgacheffe</h3>
-            <dl>
-              <dt>Origin</dt><dd>Yirgacheffe, Ethiopia</dd>
-              <dt>Roast</dt><dd>Light</dd>
-              <dt>Tasting notes</dt><dd>Jasmine, citrus, honey</dd>
-            </dl>
+          <li class="card bean-card">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Dark roasted coffee beans in a burlap sack" width="640" height="480" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="bean-roast"><span class="badge">Roast: Medium</span></p>
+              <h3>Yemen Mocha</h3>
+              <dl>
+                <dt>Origin</dt><dd>Yemen</dd>
+                <dt>Tasting notes</dt><dd>Dark chocolate, dried fruit</dd>
+              </dl>
+            </div>
           </li>
-          <li class="bean-card">
-            <img class="bean-icon" src="assets/img/bean-colombia.svg" alt="Coffee bean for the medium Colombian roast" width="96" height="96">
-            <h3>Colombia Huila</h3>
-            <dl>
-              <dt>Origin</dt><dd>Huila, Colombia</dd>
-              <dt>Roast</dt><dd>Medium</dd>
-              <dt>Tasting notes</dt><dd>Caramel, dates, almond</dd>
-            </dl>
+          <li class="card bean-card">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Light roasted coffee beans in a white bowl" width="640" height="480" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="bean-roast"><span class="badge">Roast: Light</span></p>
+              <h3>Ethiopia Yirgacheffe</h3>
+              <dl>
+                <dt>Origin</dt><dd>Ethiopia</dd>
+                <dt>Tasting notes</dt><dd>Jasmine, citrus</dd>
+              </dl>
+            </div>
           </li>
-          <li class="bean-card">
-            <img class="bean-icon" src="assets/img/bean-yemen.svg" alt="Coffee bean for the dark Yemeni roast" width="96" height="96">
-            <h3>Yemen Haraz</h3>
-            <dl>
-              <dt>Origin</dt><dd>Haraz, Yemen</dd>
-              <dt>Roast</dt><dd>Dark</dd>
-              <dt>Tasting notes</dt><dd>Cardamom, dates, spice</dd>
-            </dl>
+          <li class="card bean-card">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Medium roasted coffee beans filling the frame" width="640" height="480" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <p class="bean-roast"><span class="badge">Roast: Medium</span></p>
+              <h3>Colombia Huila</h3>
+              <dl>
+                <dt>Origin</dt><dd>Colombia</dd>
+                <dt>Tasting notes</dt><dd>Caramel, hazelnut</dd>
+              </dl>
+            </div>
           </li>
         </ul>
       </div>
     </section>
     <!-- /section:beans -->
 
+    <!-- section:gallery -->
+    <section class="section" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="gallery-title">Gallery</h2>
+          <p class="section-lead">A look inside our cups, counters and roastery.</p>
+        </div>
+        <ul class="gallery-grid">
+          <li><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="The counter of a bright café with pendant lights and a chalkboard menu" width="640" height="640" loading="lazy" decoding="async"></li>
+          <li><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="Pour-over coffee brewing through a glass carafe" width="640" height="640" loading="lazy" decoding="async"></li>
+          <li><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="A circle of coffee cups on a wooden table, seen from above" width="640" height="640" loading="lazy" decoding="async"></li>
+          <li><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="A portafilter of ground coffee beside whole beans" width="640" height="640" loading="lazy" decoding="async"></li>
+          <li><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="A cup of black coffee with crema, seen from above" width="640" height="640" loading="lazy" decoding="async"></li>
+          <li><img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&amp;fit=crop&amp;w=640&amp;h=640&amp;q=70" alt="A cappuccino with heart-shaped foam on a bed of coffee beans" width="640" height="640" loading="lazy" decoding="async"></li>
+        </ul>
+      </div>
+    </section>
+    <!-- /section:gallery -->
+
     <!-- section:branches -->
     <section class="section" id="branches" aria-labelledby="branches-title">
       <div class="container">
-        <h2 id="branches-title">Branches</h2>
-        <p class="section-lead">Two branches in Riyadh, with opening hours and directions.</p>
+        <div class="section-head">
+          <h2 id="branches-title">Branches</h2>
+          <p class="section-lead">Two branches in Riyadh, with addresses, opening hours and directions.</p>
+        </div>
         <!--
           BRANCH DATA — edit here (keep index.html and ar/index.html identical in numbers).
-          Template: name | district | hours Sat–Thu | hours Fri | lat | lon | bbox (west,south,east,north)
+          Template: name | address (shown in the card) | hours Sat–Thu | hours Fri | lat | lon | bbox (west,south,east,north)
           Directions link: https://www.google.com/maps/dir/?api=1&destination=LAT,LON
           Map embed:       https://www.openstreetmap.org/export/embed.html?bbox=BBOX&layer=mapnik&marker=LAT,LON
           olaya | Al Olaya Branch / فرع العليا | Al Olaya / العليا | 07:00–00:00 | 13:00–00:00 | 24.6988 | 46.6847 | 46.6807,24.6948,46.6887,24.7028
@@ -202,7 +230,7 @@
         <div class="branches-grid">
           <article class="branch-card" data-branch="olaya">
             <h3>Al Olaya Branch</h3>
-            <p class="branch-district">Al Olaya</p>
+            <p class="branch-district">Olaya Street, Al Olaya District, Riyadh</p>
             <dl class="branch-hours">
               <dt>Sat–Thu</dt><dd><bdi>07:00–00:00</bdi></dd>
               <dt>Fri</dt><dd><bdi>13:00–00:00</bdi></dd>
@@ -212,7 +240,7 @@
           </article>
           <article class="branch-card" data-branch="malqa">
             <h3>Al Malqa Branch</h3>
-            <p class="branch-district">Al Malqa</p>
+            <p class="branch-district">Anas Ibn Malik Road, Al Malqa District, Riyadh</p>
             <dl class="branch-hours">
               <dt>Sat–Thu</dt><dd><bdi>06:30–23:00</bdi></dd>
               <dt>Fri</dt><dd><bdi>13:00–23:00</bdi></dd>
@@ -224,6 +252,7 @@
       </div>
     </section>
     <!-- /section:branches -->
+
 
     <!-- section:order -->
     <section class="section" id="order" aria-labelledby="order-title">
@@ -261,13 +290,74 @@
             <button class="btn" id="order-submit" type="submit">Send order on WhatsApp</button>
             <p class="order-note">WhatsApp will open with your message ready, and you confirm your order there.</p>
             <p class="order-status" id="order-status" role="status" hidden>WhatsApp is open. Send the message there to confirm your order.</p>
-            <p class="order-fallback"><a id="order-fallback" target="_blank" rel="noopener" hidden>WhatsApp did not open? Open the chat here.</a></p>
+            <p class="order-fallback"><a id="order-fallback" href="#order" target="_blank" rel="noopener" hidden>WhatsApp did not open? Open the chat here.</a></p>
           </div>
         </form>
         <noscript><p class="order-noscript">Pre-ordering needs JavaScript. Turn it on in your browser, then reload this page.</p></noscript>
       </div>
     </section>
     <!-- /section:order -->
+
+    <!-- section:reviews -->
+    <section class="section" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="reviews-title">Reviews</h2>
+          <p class="section-lead">What our guests say about their coffee.</p>
+        </div>
+        <ul class="review-grid">
+          <li><figure class="card review-card"><blockquote><p>The Saudi coffee tastes like my grandfather’s majlis.</p></blockquote><figcaption>Faisal, Al Olaya</figcaption></figure></li>
+          <li><figure class="card review-card"><blockquote><p>Best flat white in Al Malqa, and the pickup was ready in five minutes.</p></blockquote><figcaption>Noura, Al Malqa</figcaption></figure></li>
+          <li><figure class="card review-card"><blockquote><p>The Yemen beans are worth the trip. I order a bag every month.</p></blockquote><figcaption>Abdulaziz, Riyadh</figcaption></figure></li>
+        </ul>
+      </div>
+    </section>
+    <!-- /section:reviews -->
+
+    <!-- section:faq -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="faq-title">FAQ</h2>
+          <p class="section-lead">Quick answers before you visit or order.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" name="faq" open>
+            <summary>Can I pre-order for pickup?</summary>
+            <p>Yes. Choose a branch in the form above and we continue on WhatsApp.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>How long does an order take?</summary>
+            <p>Usually 10 minutes.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Do you sell whole beans?</summary>
+            <p>Yes, in 250 g and 1 kg bags, ground on request.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Is there parking?</summary>
+            <p>Both branches have free parking.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Do you deliver?</summary>
+            <p>Not yet. Pickup only.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+    <!-- /section:faq -->
+
+    <!-- section:cta -->
+    <section class="section section--plain cta-band" id="cta" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <div>
+          <h2 id="cta-title">Your coffee, ready when you arrive.</h2>
+          <p class="section-lead">Pick your branch, choose your drinks and collect them without waiting.</p>
+        </div>
+        <a class="btn btn-light" href="#order">Pre-order now</a>
+      </div>
+    </section>
+    <!-- /section:cta -->
   </main>
 
   <footer class="site-footer">
@@ -275,6 +365,7 @@
       <div class="footer-col">
         <a class="brand" href="index.html"><img src="assets/img/dallah.svg" alt="" width="32" height="32"><span>Najd Coffee</span></a>
         <p class="footer-about">Specialty coffee with a Najdi spirit, in Riyadh.</p>
+        <p class="footer-demo">Demo content: names, prices, reviews and phone numbers are samples until replaced.</p>
       </div>
       <nav class="footer-col" aria-labelledby="footer-links-title">
         <h2 class="footer-title" id="footer-links-title">Links</h2>
@@ -294,8 +385,8 @@
         <h2 class="footer-title">Contact</h2>
         <ul class="footer-contact">
           <li><a href="#order">Order on WhatsApp</a></li>
-          <li>Al Olaya Branch: Al Olaya</li>
-          <li>Al Malqa Branch: Al Malqa</li>
+          <li>Al Olaya Branch: Olaya Street, Al Olaya District</li>
+          <li>Al Malqa Branch: Anas Ibn Malik Road, Al Malqa District</li>
         </ul>
       </div>
       <div class="footer-col">
@@ -313,9 +404,26 @@
       </div>
       <section class="footer-credits" aria-labelledby="footer-credits-title">
         <h2 class="footer-title" id="footer-credits-title">Image credits</h2>
+        <p class="credits-note">All photos are free to use under the Unsplash License.</p>
         <ul class="credits-list">
-          <li>Illustrations (coffee pot, story scene, beans, Sadu pattern): original artwork for Najd Coffee.</li>
+          <li>Illustrations (coffee pot, beans, Sadu pattern): original artwork for Najd Coffee.</li>
           <li>Branch maps: © OpenStreetMap contributors.</li>
+          <li>Hero photo (cup of coffee and roasted beans): <a href="https://images.unsplash.com/photo-1459755486867-b55449bb39ff">Unsplash</a> contributor.</li>
+          <li>Menu photo (black coffee): <a href="https://images.unsplash.com/photo-1504630083234-14187a9df0f5">Unsplash</a> contributor.</li>
+          <li>Menu photo (flat white): <a href="https://images.unsplash.com/photo-1485808191679-5f86510681a2">Unsplash</a> contributor.</li>
+          <li>Menu photo (iced latte): <a href="https://images.unsplash.com/photo-1517701604599-bb29b565090c">Unsplash</a> contributor.</li>
+          <li>Menu photo (cake slice): <a href="https://images.unsplash.com/photo-1571115177098-24ec42ed204d">Unsplash</a> contributor.</li>
+          <li>Menu photo (small glass of coffee): <a href="https://images.unsplash.com/photo-1610889556528-9a770e32642f">Unsplash</a> contributor.</li>
+          <li>Story photo (roasting drum): <a href="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb">Unsplash</a> contributor.</li>
+          <li>Beans photo (dark roast in a sack): <a href="https://images.unsplash.com/photo-1524350876685-274059332603">Unsplash</a> contributor.</li>
+          <li>Beans photo (light roast in a bowl): <a href="https://images.unsplash.com/photo-1587734195503-904fca47e0e9">Unsplash</a> contributor.</li>
+          <li>Beans photo (medium roast): <a href="https://images.unsplash.com/photo-1447933601403-0c6688de566e">Unsplash</a> contributor.</li>
+          <li>Gallery photo (café counter): <a href="https://images.unsplash.com/photo-1453614512568-c4024d13c247">Unsplash</a> contributor.</li>
+          <li>Gallery photo (pour-over brewing): <a href="https://images.unsplash.com/photo-1442512595331-e89e73853f31">Unsplash</a> contributor.</li>
+          <li>Gallery photo (cups from above): <a href="https://images.unsplash.com/photo-1498804103079-a6351b050096">Unsplash</a> contributor.</li>
+          <li>Gallery photo (portafilter and beans): <a href="https://images.unsplash.com/photo-1511920170033-f8396924c348">Unsplash</a> contributor.</li>
+          <li>Gallery photo (cup with crema): <a href="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd">Unsplash</a> contributor.</li>
+          <li>Gallery photo (cappuccino on beans): <a href="https://images.unsplash.com/photo-1512568400610-62da28bc8a13">Unsplash</a> contributor.</li>
         </ul>
       </section>
     </div>
