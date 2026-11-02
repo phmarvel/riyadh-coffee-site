@@ -84,7 +84,7 @@ jobs:
           #!/usr/bin/env bash
           # ReleaseHub agent runner: reads the run's context, runs the coding agent, opens or updates the pull request, reports back.
           set -euo pipefail
-          RH_SCRIPT_VERSION="a7a2f69093e6"
+          RH_SCRIPT_VERSION="6dedc6e7cc1f"
           API="${RH_API%/}"
           EVENTS="$API/api/v1/ai/runner/runs/$RH_RUN/events"
           WORK="${RUNNER_TEMP:-${AGENT_TEMPDIRECTORY:-/tmp}}/releasehub"
@@ -397,7 +397,9 @@ jobs:
             BROWSER=""
             [ "$RH_PROVIDER" = "claude-code" ] || return 0
             [ "$(jq -r '.browser.enabled // false' "$WORK/context.json")" = "true" ] || return 0
-            [ -n "$(find . -maxdepth 3 -name package.json -not -path '*/node_modules/*' -print -quit 2>/dev/null)" ] || return 0
+            # A web app (a package.json), or a static site (an index.html near the top: plan 1.61c, served with python3 -m http.server).
+            [ -n "$(find . -maxdepth 3 -name package.json -not -path '*/node_modules/*' -print -quit 2>/dev/null)" ] \
+              || [ -n "$(find . -maxdepth 2 -name index.html -not -path '*/node_modules/*' -not -path './.git/*' -print -quit 2>/dev/null)" ] || return 0
             mkdir -p "$SHOTS_DIR" "$KIT_DIR"
             restore_kit
             log "Setting up a browser so the agent can see the app."
