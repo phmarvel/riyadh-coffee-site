@@ -406,7 +406,8 @@ a:hover { color: var(--ink); }
 .footer-credits { grid-column: 1 / -1; padding-block-start: var(--space-5); border-block-start: 1px solid var(--clay); }
 .credits-note { margin-block-end: var(--space-3); }
 .credits-list { column-width: 20rem; column-gap: var(--space-6); font-size: var(--fs-sm); }
-.credits-list li { padding-block: var(--space-1); break-inside: avoid; }
+.credits-list li { break-inside: avoid; }
+.credits-list a { display: inline-flex; align-items: center; min-block-size: var(--tap); min-inline-size: var(--tap); }
 .footer-bottom { padding-block-start: var(--space-5); border-block-start: 1px solid var(--clay); }
 
 /* ===== section: reviews — NJD-17 three quotes ===== */
