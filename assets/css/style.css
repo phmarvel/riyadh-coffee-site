@@ -136,7 +136,14 @@ a:hover { color: var(--ink); }
 
 /* ===== Section styles (each later story adds only inside its own marked area, in this order) ===== */
 
-/* ===== section: menu ===== */
+/* ===== section: menu — NJD-3 قسم القائمة (المشروبات والحلويات) ===== */
+.menu-category + .menu-category { margin-block-start: var(--space-7); }
+.menu-category h3 { padding-block-end: var(--space-2); margin-block-end: var(--space-5); border-block-end: 2px solid var(--clay); }
+.menu-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); }
+.menu-card { display: flex; flex-direction: column; padding: var(--space-5); background: var(--white); color: var(--ink); border: 1px solid var(--clay); border-radius: var(--radius); box-shadow: var(--shadow); }
+.menu-name { margin-block: 0 var(--space-2); font-family: var(--font-head); font-size: 1.25rem; line-height: 1.3; }
+.menu-desc { margin-block-end: var(--space-4); }
+.menu-price { margin-block: auto 0; color: var(--henna-dark); font-weight: 700; font-variant-numeric: tabular-nums; }
 
 /* ===== section: story ===== */
 
