@@ -138,9 +138,24 @@ a:hover { color: var(--ink); }
 
 /* ===== section: menu ===== */
 
-/* ===== section: story ===== */
+/* ===== section: story — قصتنا وحبوبنا — NJD-4 ===== */
+.story-split { display: grid; gap: var(--space-6); align-items: center; margin-block-start: var(--space-5); }
+.story-art { inline-size: 100%; max-inline-size: 240px; block-size: auto; justify-self: center; }
+.story-text { max-inline-size: var(--measure); }
+.story-text p { margin-block: 0 var(--space-4); }
+.story-text p:last-child { margin-block-end: 0; }
+@media (min-width: 768px) {
+  .story-split { grid-template-columns: 1fr 2fr; gap: var(--space-8); }
+}
 
-/* ===== section: beans ===== */
+/* ===== section: beans — قصتنا وحبوبنا — NJD-4 ===== */
+.bean-grid { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.bean-card { background: var(--white); color: var(--ink); border: 1px solid var(--sand-deep); border-radius: var(--radius); box-shadow: var(--shadow); padding: var(--space-5); }
+.bean-icon { display: block; inline-size: 64px; block-size: 64px; margin-block-end: var(--space-3); }
+.bean-card h3 { margin-block: 0 var(--space-3); }
+.bean-card dl { margin: 0; }
+.bean-card dt { color: var(--clay); font-weight: 700; margin-block-start: var(--space-3); }
+.bean-card dd { margin: 0; }
 
 /* ===== section: branches ===== */
 
