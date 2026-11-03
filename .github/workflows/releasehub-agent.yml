@@ -84,7 +84,7 @@ jobs:
           #!/usr/bin/env bash
           # ReleaseHub agent runner: reads the run's context, runs the coding agent, opens or updates the pull request, reports back.
           set -euo pipefail
-          RH_SCRIPT_VERSION="6dedc6e7cc1f"
+          RH_SCRIPT_VERSION="083276af69b3"
           API="${RH_API%/}"
           EVENTS="$API/api/v1/ai/runner/runs/$RH_RUN/events"
           WORK="${RUNNER_TEMP:-${AGENT_TEMPDIRECTORY:-/tmp}}/releasehub"
@@ -391,6 +391,56 @@ jobs:
           BROWSER=""
           SHOTS_DIR=".releasehub-context/screenshots"
           KIT_DIR=".releasehub-context/preview"
+          # Skills and plugins for Claude Code (plan 1.62): those of the workspace that are on for this project. Each skill becomes a
+          # SKILL.md in the repository's .claude/skills (kept out of git), each MCP server joins the MCP settings with its tools allowed, and
+          # each plugin is installed from its marketplace for this folder only, once Claude Code is there (install_plugins).
+          ADD_ON_TOOLS=""
+          setup_add_ons() {
+            ADD_ON_TOOLS=""
+            rm -rf .claude/skills/rh-*
+            local count i folder exclude servers
+            count=$(jq -r '(.claude.skills // []) | length' "$WORK/context.json")
+            if [ "$count" -gt 0 ]; then
+              for ((i = 0; i < count; i++)); do
+                folder=$(jq -r ".claude.skills[$i].folder" "$WORK/context.json")
+                case "$folder" in rh-*[!a-z0-9-]*|*/*) continue ;; rh-*) ;; *) continue ;; esac
+                mkdir -p ".claude/skills/$folder"
+                jq -r ".claude.skills[$i].file" "$WORK/context.json" > ".claude/skills/$folder/SKILL.md"
+              done
+              exclude=$(git rev-parse --git-path info/exclude)
+              mkdir -p "$(dirname "$exclude")"
+              grep -qxF '.claude/skills/rh-*/' "$exclude" 2>/dev/null || echo '.claude/skills/rh-*/' >> "$exclude"
+              ADD_ON_TOOLS="$ADD_ON_TOOLS,Skill"
+              log "Gave Claude Code the skills: $(jq -r '[.claude.skills[].key] | join(", ")' "$WORK/context.json")."
+            fi
+            servers=$(jq -c '.claude.mcpServers // {}' "$WORK/context.json")
+            if [ "$servers" != "{}" ]; then
+              [ -f "$WORK/mcp.json" ] || echo '{"mcpServers": {}}' > "$WORK/mcp.json"
+              jq --argjson s "$servers" '.mcpServers += $s' "$WORK/mcp.json" > "$WORK/mcp.tmp" && mv "$WORK/mcp.tmp" "$WORK/mcp.json"
+              ADD_ON_TOOLS="$ADD_ON_TOOLS,$(jq -r 'keys | map("mcp__" + .) | join(",")' <<< "$servers")"
+              log "Gave Claude Code the MCP servers: $(jq -r 'keys | join(", ")' <<< "$servers")."
+            fi
+            [ "$(jq -r '(.claude.plugins // []) | length' "$WORK/context.json")" = "0" ] || ADD_ON_TOOLS="$ADD_ON_TOOLS,Skill"
+          }
+
+          # The plugins of setup_add_ons, from their marketplaces (once a job: Claude Code keeps them).
+          install_plugins() {
+            [ -z "${PLUGINS_READY:-}" ] || return 0
+            PLUGINS_READY=1
+            local plugin market installed=""
+            while IFS=$'\t' read -r plugin market; do
+              [ -n "$plugin" ] || continue
+              [ -z "$market" ] || claude plugin marketplace add "$market" >/dev/null 2>"$WORK/plugin-err.txt" || true
+              if claude plugin install "$plugin" --scope local >/dev/null 2>>"$WORK/plugin-err.txt" \
+                || claude plugin install "$plugin" >/dev/null 2>>"$WORK/plugin-err.txt"; then
+                installed="${installed:+$installed, }$plugin"
+              else
+                log "Couldn't install the plugin $plugin: $(tail -n 1 "$WORK/plugin-err.txt" | cut -c1-300)" warning
+              fi
+            done < <(jq -r '(.claude.plugins // [])[] | [.plugin, (.marketplace // "")] | @tsv' "$WORK/context.json")
+            [ -z "$installed" ] || log "Installed the plugins: $installed."
+          }
+
           setup_browser() {
             # A later stage in the same job (after a hand-over) reuses the browser set up for the first one.
             if [ -n "${BROWSER_READY:-}" ]; then BROWSER=1; return 0; fi
@@ -2771,6 +2821,7 @@ jobs:
             setup_browser
             setup_phone
             setup_game
+            setup_add_ons
             app_check
             phone_check
             prompt > "$WORK/prompt.md"
@@ -3044,6 +3095,7 @@ jobs:
                   mkdir -p "$(dirname "$stamp")" && touch "$stamp"
                 fi
                 CLAUDE_READY=1
+                install_plugins
                 local tools="Read,Glob,Grep" rc=0
                 [ "$2" = "plan" ] || tools="Read,Glob,Grep,Edit,Write,Bash"
                 local resume=()
@@ -3053,6 +3105,11 @@ jobs:
                 # stage writes).
                 [ "$2" = "plan" ] && tools="Read,Glob,Grep,Bash(rh-graph:*),Edit($NOTES_FILE),Write($NOTES_FILE),Edit($TASK_FILE),Write($TASK_FILE),Edit($NEEDS_FILE),Write($NEEDS_FILE)"
                 local mcp=() agents=()
+                if [ -n "$ADD_ON_TOOLS" ]; then
+                  # The workspace's skills and plugins that are on (plan 1.62).
+                  [ ! -f "$WORK/mcp.json" ] || mcp=(--mcp-config "$WORK/mcp.json")
+                  tools="$tools$ADD_ON_TOOLS"
+                fi
                 if [ -n "$BROWSER$PHONE$GAME" ]; then
                   # Running the app needs Bash even in a read-only stage; whatever it changes is reset after the stage.
                   [ ! -f "$WORK/mcp.json" ] || mcp=(--mcp-config "$WORK/mcp.json")
